@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 # This call to setup() does all the work
 setup(
-    name="transfer",
+    name="transfer.sh",
     version="1.0.0",
     description="unofficial transfer.sh CLI",
     long_description=README,
