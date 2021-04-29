@@ -11,7 +11,7 @@
 One command installation
 
 ## Python module
-run command on terminal.
+run commands on terminal.
 
 ```
 $ pip install -U transfer.sh
@@ -24,7 +24,7 @@ $ python3.x -m pip install -U transfer.sh
 ```
 
 ## CLI
-Commans line help
+Command line help
 
 ### Upload file
 ```
