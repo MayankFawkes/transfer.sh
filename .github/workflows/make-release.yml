@@ -1,4 +1,4 @@
-name: Make built and release
+name: Make release
 
 on:
   push:
