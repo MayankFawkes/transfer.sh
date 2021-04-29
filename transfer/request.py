@@ -87,10 +87,14 @@ class MakeRequest:
 			size=None, 
 			progress=None,
 			in_second=None, 
-			loading_sign:str="█", 
+			loading_sign:str="█",
 			width:int=50, 
 			end="\r"
 		) -> None:
+		if not size:
+			size = 1
+			progress = 1
+			in_second = 0
 		percentage = (progress*width) // size
 		print(f"Upload: |{loading_sign * percentage:{'-'}<{width}}| {percentage*(100//width):>3}%",
 			f"{str(round(in_second/(1024*1024), 2))+'MB/s' if len(str(in_second//1024)) >= 4 else str(in_second//1024)+'Kb/s':>4}",

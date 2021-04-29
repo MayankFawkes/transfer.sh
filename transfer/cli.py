@@ -18,6 +18,7 @@ from typing import Union
 from typing import List
 from json import loads, dumps
 from tempfile import gettempdir
+from transfer.exceptions import FileTooLarge, PrepareError
 
 
 class ActionCheck(object):
@@ -103,10 +104,17 @@ class CLI(log):
 			self._remove(args)
 
 	def _upload(self, namespace:argparse.Namespace) -> None:
-		namespace = vars(namespace)
-		namespace.__setitem__("file", namespace.pop("type").get("value"))
-		res = Upload(cli=True,**namespace)
-		self._add_log(res.data)
+		try:
+			namespace = vars(namespace)
+			namespace.__setitem__("file", namespace.pop("type").get("value"))
+			res = Upload(cli=True,**namespace)
+			self._add_log(res.data)
+		except FileTooLarge as e: 
+			print(f"Error: {e.msg}")
+
+		except PrepareError as e:
+			print(f"Error: {e.msg}")
+
 
 	def _remove(self, namespace:argparse.Namespace):
 		try:
@@ -161,7 +169,9 @@ class CLI(log):
 
 		c2.add_argument("-v", "--verbose", required=False, action="store_true", help="Enable Verbose mode for extra logs.")
 		c2.add_argument("-np", "--no-process-bar", required=False, action="store_true", help="Disable process bar.")
-		c2.add_argument("-s", "--url", required=False, help="Third-party transfer.sh servers.")
+		c2.add_argument("-u", "--url", required=False, help="Third-party transfer.sh servers.")
+		c2.add_argument("-f", "--force", required=False,action="store_true",
+			help="Force to skip some verification tests and upload directly.")
 		
 		c3 = sub_parser.add_parser("list", aliases=["l"], help="List all uploaded files.")
 		c3.add_argument("-s", "--show", action="store_const", required=True, const=dict(type="list"), dest="type")

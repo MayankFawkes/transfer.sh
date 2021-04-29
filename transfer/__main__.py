@@ -6,7 +6,7 @@ main working functions file
 import requests, re
 from time import time
 from transfer.request import MakeRequest
-from transfer.exceptions import FileTooLarge
+from transfer.exceptions import FileTooLarge, PrepareError
 from random import choices
 from string import digits, ascii_uppercase, ascii_lowercase
 
@@ -16,7 +16,7 @@ class Upload(MakeRequest):
 	:param str file: name of the file of full location
 	:param **kwargs: Optional arguments that :class:`MakeRequest <MakeRequest>` class takes.
 	'''
-	def __init__(self, file:str, verbose:bool=False, cli:bool=False,**kwargs):
+	def __init__(self, file:str, verbose:bool=False, force:bool=False, cli:bool=False,**kwargs):
 		super().__init__(file=file, **kwargs)
 
 		start = time()
@@ -24,7 +24,11 @@ class Upload(MakeRequest):
 		if self.verbose:
 			print("Preparing upload file...")
 
-		self.prepare()
+		if not force:
+			try:
+				self.prepare()
+			except:
+				raise PrepareError()
 
 		response = self._send(**self.kwargs)
 
@@ -60,7 +64,7 @@ class Upload(MakeRequest):
 		self._max_file_limit = int(nsize)*size[type]
 
 		if self._max_file_limit < self._len:
-			FileTooLarge(self._max_file_limit)
+			raise FileTooLarge(self._max_file_limit)
 
 	def _gen_hash(self) -> str:
 		return "".join([
