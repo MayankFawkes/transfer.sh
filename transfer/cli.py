@@ -12,11 +12,12 @@ from transfer import Upload, Remove, __version__, __github__
 from transfer.table import Table
 import argparse, re, signal
 from os import access, R_OK
-from os.path import isfile
+from os.path import isfile, sep
 from typing import Dict
 from typing import Union
 from typing import List
 from json import loads, dumps
+from tempfile import gettempdir
 
 
 class ActionCheck(object):
@@ -45,10 +46,13 @@ class ActionCheck(object):
 		return getattr(self, self.test)(value)
 
 class log:
-	FILE_NAME = "transfer.log"
 	def __init__(self):
+		self.FILE_NAME = self._get_file_name()
 		if not isfile(self.FILE_NAME):
 			open(self.FILE_NAME, 'a').close()
+
+	def _get_file_name(self, name:str=".transfer.log"):
+		return f"{gettempdir()}{sep}{name}"
 
 	def _get(self) -> Union[List[None], List[Dict[str, str]]]:
 		with open(self.FILE_NAME, "r") as file:
