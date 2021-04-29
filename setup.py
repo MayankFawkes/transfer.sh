@@ -1,5 +1,6 @@
 import pathlib
 from setuptools import setup
+from transfer import __version__
 
 # The directory containing this file
 HERE = pathlib.Path(__file__).parent
@@ -10,17 +11,17 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="transfer.sh",
-    version="1.0.0",
-    description="unofficial transfer.sh CLI",
+    version=f"{__version__}",
+    description="transfer.sh CLI",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/mayankfawkes",
+    url="https://github.com/MayankFawkes/transfer.sh",
     author="Mayank Gupta",
     author_email="mayankfawkes@gmail.com",
     license="MIT License",
     project_urls={
-            "Documentation": "https://github.com/mayankfawkes",
-            "Source": "https://github.com/mayankfawkes",
+            "Documentation": "https://github.com/MayankFawkes/transfer.sh/blob/master/README.md",
+            "Source": "https://github.com/MayankFawkes/transfer.sh",
         },
     classifiers=[
         "Topic :: Software Development :: Libraries :: Python Modules",
@@ -41,10 +42,12 @@ setup(
         "Topic :: Terminals",
         "Topic :: Utilities",
         ],
-
+    entry_points={
+        "console_scripts": ["transfer = transfer.cli:main"],
+        },
     packages=["transfer"],
     python_requires=">=3.6",
-    keywords=[],
+    keywords=["upload", "cli", "transfer.sh"],
     include_package_data=True,
-    install_requires=[],
+    install_requires=["requests"],
 )
