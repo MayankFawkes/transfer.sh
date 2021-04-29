@@ -12,7 +12,7 @@ README = (HERE / "README.md").read_text()
 setup(
     name="transfer.sh",
     version=f"{__version__}",
-    description="transfer.sh CLI",
+    description="Transfer.sh command line program, Now file sharing from the command line.",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/MayankFawkes/transfer.sh",
@@ -33,7 +33,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "License :: OSI Approved :: MIT License",
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         'Topic :: System :: Networking',
         'Topic :: Internet :: WWW/HTTP',
         "Natural Language :: English",
