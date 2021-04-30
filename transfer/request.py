@@ -56,7 +56,10 @@ class MakeRequest:
 
     	:rtype: collections.Iterable
 		'''
-		while data:=self._file.read(chunk_size):
+		while True:
+			data=self._file.read(chunk_size)
+			if not data:
+				break
 			self._cb_kwargs.update({
 				'size'	: self._len,
 				'progress': self._progress,

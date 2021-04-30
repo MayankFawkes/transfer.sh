@@ -93,12 +93,13 @@ class CLI(log):
 		super().__init__()
 
 		args = self.get_args()
+		print(args)
 
 		if args.type.get("type") == "file":
 			self._upload(args)
 
 		elif args.type.get("type") == "list":
-			self._list()
+			self._list(args)
 
 		elif args.type.get("type") == "hash":
 			self._remove(args)
@@ -138,7 +139,11 @@ class CLI(log):
 		except KeyError:
 			print(f"Error: Invalid hash, Not found.")
 
-	def _list(self):
+	def _list(self, namespace:argparse.Namespace):
+		if namespace.purge:
+			print(f"Clear log file successfully")
+			return self._save() or True
+
 		logs = self._get()
 
 		table = Table(["file", "hash", "created", "url"], margin=5)
@@ -173,8 +178,14 @@ class CLI(log):
 		c2.add_argument("-f", "--force", required=False,action="store_true",
 			help="Force to skip some verification tests and upload directly.")
 		
-		c3 = sub_parser.add_parser("list", aliases=["l"], help="List all uploaded files.")
-		c3.add_argument("-s", "--show", action="store_const", required=True, const=dict(type="list"), dest="type")
+		c3 = sub_parser.add_parser("list", aliases=["l"], help="Manage all uploaded files.")
+		groupc3 = c3.add_mutually_exclusive_group()
+
+		groupc3.add_argument("-s", "--show", action="store_const", required=False, 
+			const=dict(type="list"), dest="type", default=dict(type="list"), help="Show all uploaded files.")
+		groupc3.add_argument("-p", "--purge", required=False, action="store_true", help="Purge/remove upload history.")
+
+
 		return parser.parse_args()
 
 	def bye(self, signum, frame):
