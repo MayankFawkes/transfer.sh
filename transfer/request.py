@@ -7,7 +7,7 @@ from mimetypes import guess_type
 from time import time
 from os.path import getsize, split
 from datetime import timedelta
-
+from transfer.exceptions import EmptyFileError
 from typing import Generator
 from typing import Dict
 from typing import Union
@@ -29,6 +29,9 @@ class MakeRequest:
 			cb_kwargs:dict=dict(end="\r")
 		):
 		self._len = getsize(file)
+		if not self._len:
+			raise EmptyFileError()
+
 		self._content_type, encoding = guess_type(file)
 
 		self._file = open(file, "rb")
@@ -87,7 +90,7 @@ class MakeRequest:
 		self._finally()
 
 	def _progress_bar(self, 
-			size=None, 
+			size=None,
 			progress=None,
 			in_second=None, 
 			loading_sign:str="█",

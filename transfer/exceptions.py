@@ -43,3 +43,15 @@ class PrepareError(TransferError):
 	@property
 	def error_message(self):
 		return f'Unable to fetch prepare data from site try --force.'
+
+class EmptyFileError(TransferError):
+	def __init__(self):
+		"""
+		:param int limit:
+			Max uploading size.
+		"""
+		super().__init__(self.error_message)
+
+	@property
+	def error_message(self):
+		return f'Could not upload empty file.'

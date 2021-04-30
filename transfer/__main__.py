@@ -6,7 +6,7 @@ main working functions file
 import requests, re
 from time import time
 from transfer.request import MakeRequest
-from transfer.exceptions import FileTooLarge, PrepareError
+from transfer.exceptions import FileTooLarge, PrepareError, EmptyFileError
 from random import choices
 from string import digits, ascii_uppercase, ascii_lowercase
 
@@ -31,6 +31,9 @@ class Upload(MakeRequest):
 				raise PrepareError()
 
 		response = self._send(**self.kwargs)
+
+		if response.status_code == 400:
+			raise EmptyFileError()
 
 		assert response.status_code == 200, response.reason
 

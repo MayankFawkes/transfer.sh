@@ -18,7 +18,7 @@ from typing import Union
 from typing import List
 from json import loads, dumps
 from tempfile import gettempdir
-from transfer.exceptions import FileTooLarge, PrepareError
+from transfer.exceptions import FileTooLarge, PrepareError, EmptyFileError
 
 
 class ActionCheck(object):
@@ -93,7 +93,7 @@ class CLI(log):
 		super().__init__()
 
 		args = self.get_args()
-		print(args)
+		# print(args)
 
 		if args.type.get("type") == "file":
 			self._upload(args)
@@ -114,6 +114,9 @@ class CLI(log):
 			print(f"Error: {e.msg}")
 
 		except PrepareError as e:
+			print(f"Error: {e.msg}")
+
+		except EmptyFileError as e:
 			print(f"Error: {e.msg}")
 
 
