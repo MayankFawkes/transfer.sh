@@ -1,4 +1,4 @@
-# transfer.sh
+![banner](https://github.com/MayankFawkes/transfer.sh/raw/master/img/transfer.png)
 
 [![Publish to PyPI](https://github.com/MayankFawkes/transfer.sh/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/MayankFawkes/transfer.sh/actions/workflows/pypi-publish.yml)
 ![ver](https://img.shields.io/pypi/pyversions/transfer.sh)
@@ -6,6 +6,9 @@
 ![status](https://img.shields.io/pypi/status/transfer.sh)
 ![ver](https://img.shields.io/pypi/v/transfer.sh)
 [![Downloads](https://pepy.tech/badge/transfer-sh/week)](https://pepy.tech/project/transfer-sh)
+
+# transfer.sh
+Transfer.sh command line program, Now file sharing from the command line.
 
 # Guide
 One command installation
@@ -33,4 +36,8 @@ $ transfer upload file.txt
 ### Remove file
 ```
 $ transfer remove <uploaded file hash>
+```
+### List uploaded files
+```
+$ transfer list --show
 ```
