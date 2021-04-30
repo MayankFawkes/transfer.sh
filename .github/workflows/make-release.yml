@@ -15,11 +15,13 @@ jobs:
       uses: JackMcKew/pyinstaller-action-linux@main
       with:
         path: .
+        spec: transfer.spec
 
     - name: PyInstaller Windows
       uses: JackMcKew/pyinstaller-action-windows@main
       with:
         path: .
+        spec: transfer.spec
 
     - name: Create Release
       id: create_release
