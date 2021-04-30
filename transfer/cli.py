@@ -182,7 +182,7 @@ class CLI(log):
 			help="Force to skip some verification tests and upload directly.")
 		
 		c3 = sub_parser.add_parser("list", aliases=["l"], help="Manage all uploaded files.")
-		groupc3 = c3.add_mutually_exclusive_group()
+		groupc3 = c3.add_mutually_exclusive_group(required=True)
 
 		groupc3.add_argument("-s", "--show", action="store_const", required=False, 
 			const=dict(type="list"), dest="type", default=dict(type="list"), help="Show all uploaded files.")
