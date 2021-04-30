@@ -10,10 +10,10 @@
 # transfer.sh
 Transfer.sh command line program, Now file sharing from the command line.
 
-# Guide
+# Installation
 One command installation
 
-## Python module
+## With Python
 run commands on terminal.
 
 ```
@@ -25,19 +25,23 @@ Have multipls versions of python?
 ```
 $ python3.x -m pip install -U transfer.sh
 ```
+## Linux
+```
+$ curl --silent "https://api.github.com/repos/MayankFawkes/transfer.sh/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | { tag=($(< /dev/stdin)); sudo curl -L "https://github.com/MayankFawkes/transfer.sh/releases/download/$tag/transfer" -o /usr/local/bin/transfer; sudo chmod +x /usr/local/bin/transfer;}
+```
 
-## CLI
+# CLI
 Command line help
 
-### Upload file
+## Upload file
 ```
 $ transfer upload file.txt
 ```
-### Remove file
+## Remove file
 ```
 $ transfer remove <uploaded file hash>
 ```
-### List uploaded files
+## List uploaded files
 ```
 $ transfer list --show
 ```
