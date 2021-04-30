@@ -1,4 +1,4 @@
-![banner](https://github.com/MayankFawkes/transfer.sh/raw/master/img/transfer.png)
+[![banner](https://github.com/MayankFawkes/transfer.sh/raw/master/img/transfer.png)](https://github.com/MayankFawkes/transfer.sh)
 
 [![Publish to PyPI](https://github.com/MayankFawkes/transfer.sh/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/MayankFawkes/transfer.sh/actions/workflows/pypi-publish.yml)
 ![ver](https://img.shields.io/pypi/pyversions/transfer.sh)
