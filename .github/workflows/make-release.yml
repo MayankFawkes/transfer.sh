@@ -10,6 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    
+    - name: PyInstaller Linux
+      uses: JackMcKew/pyinstaller-action-linux@main
+      with:
+        path: .
+
+    - name: PyInstaller Windows
+      uses: JackMcKew/pyinstaller-action-windows@main
+      with:
+        path: .
 
     - name: Create Release
       id: create_release
@@ -22,3 +32,23 @@ jobs:
         body_path: ./release.md
         draft: false
         prerelease: false
+
+    - name: Upload linux file
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./dist/linux/transfer
+          asset_name: transfer
+          asset_content_type: application/octet-stream
+    
+    - name: Upload windows file
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./dist/windows/transfer.exe
+          asset_name: transfer.exe
+          asset_content_type: application/octet-stream
