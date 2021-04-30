@@ -1,5 +1,9 @@
 # Changelogs
 
+## V1.1.5
+
+* updated workflow to release binaries
+
 ## V1.1.4
 
 * ``--purge`` added in list
