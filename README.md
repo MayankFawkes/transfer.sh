@@ -5,7 +5,7 @@
 ![lang](https://img.shields.io/github/languages/top/mayankfawkes/transfer.sh)
 ![status](https://img.shields.io/pypi/status/transfer.sh)
 ![ver](https://img.shields.io/pypi/v/transfer.sh)
-[![Downloads](https://pepy.tech/badge/transfer-sh/week)](https://pepy.tech/project/transfer-sh)
+[![Downloads](https://pepy.tech/badge/transfer.sh/week)](https://pepy.tech/project/transfer-sh)
 
 # transfer.sh
 Transfer.sh command line program, Now file sharing from the command line.
