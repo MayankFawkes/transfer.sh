@@ -1,10 +1,10 @@
 [![banner](https://github.com/MayankFawkes/transfer.sh/raw/master/img/transfer.png)](https://github.com/MayankFawkes/transfer.sh)
 
 [![Publish to PyPI](https://github.com/MayankFawkes/transfer.sh/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/MayankFawkes/transfer.sh/actions/workflows/pypi-publish.yml)
-![ver](https://img.shields.io/pypi/pyversions/transfer.sh)
-![lang](https://img.shields.io/github/languages/top/mayankfawkes/transfer.sh)
-![status](https://img.shields.io/pypi/status/transfer.sh)
-![ver](https://img.shields.io/pypi/v/transfer.sh)
+[![ver](https://img.shields.io/pypi/pyversions/transfer.sh)](https://pypi.org/project/transfer.sh/)
+[![lang](https://img.shields.io/github/languages/top/mayankfawkes/transfer.sh)](https://github.com/MayankFawkes/transfer.sh)
+[![status](https://img.shields.io/pypi/status/transfer.sh)](https://pypi.org/project/transfer.sh/)
+[![ver](https://img.shields.io/pypi/v/transfer.sh)](https://pypi.org/project/transfer.sh/)
 [![Downloads](https://pepy.tech/badge/transfer.sh/week)](https://pepy.tech/project/transfer-sh)
 
 # transfer.sh
