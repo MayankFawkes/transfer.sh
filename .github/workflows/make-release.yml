@@ -13,7 +13,7 @@ jobs:
 
     - name: PyInstaller Linux amd64
       id: amd64
-      uses: action-python/pyinstaller-py3.7@amd64
+      uses: action-python/pyinstaller-py3.8@amd64
       with:
         path: .
         rename: transfer-linux-amd64
@@ -21,7 +21,7 @@ jobs:
 
     - name: PyInstaller Linux i386
       id: i386
-      uses: action-python/pyinstaller-py3.7@i386
+      uses: action-python/pyinstaller-py3.8@i386
       with:
         path: .
         rename: transfer-linux-i386
@@ -29,7 +29,7 @@ jobs:
 
     - name: PyInstaller Windows x32
       id: win32
-      uses: action-python/pyinstaller-py3.7@win32
+      uses: action-python/pyinstaller-py3.8@win32
       with:
         path: .
         rename: transfer-windows-win32.exe
@@ -37,7 +37,7 @@ jobs:
 
     - name: PyInstaller Windows x64
       id: win64
-      uses: action-python/pyinstaller-py3.7@win64
+      uses: action-python/pyinstaller-py3.8@win64
       with:
         path: .
         rename: transfer-windows-win64.exe
