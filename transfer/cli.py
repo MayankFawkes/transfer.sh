@@ -93,7 +93,6 @@ class CLI(log):
 		super().__init__()
 
 		args = self.get_args()
-		# print(args)
 
 		if args.type.get("type") == "file":
 			self._upload(args)
@@ -180,6 +179,13 @@ class CLI(log):
 		c2.add_argument("-u", "--url", required=False, help="Third-party transfer.sh servers.")
 		c2.add_argument("-f", "--force", required=False,action="store_true",
 			help="Force to skip some verification tests and upload directly.")
+
+		groupc3 = c2.add_mutually_exclusive_group(required=False)
+		groupc3.add_argument("--max-downloads", type=int, required=False, 
+			dest="max-downloads", help="Link will automatically delete after limit of downloads.")
+		groupc3.add_argument("--max-days", required=False, type=int, dest="max-days",
+			help="how long you want to keep the link alive.")
+
 		
 		c3 = sub_parser.add_parser("list", aliases=["l"], help="Manage all uploaded files.")
 		groupc3 = c3.add_mutually_exclusive_group(required=True)

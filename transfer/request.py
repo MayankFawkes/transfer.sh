@@ -26,11 +26,19 @@ class MakeRequest:
 			url:str=None, 
 			callback:object=None,
 			no_process_bar:bool=True,
-			cb_kwargs:dict=dict(end="\r")
+			cb_kwargs:dict=dict(end="\r"),
+			**kwargs
 		):
 		self._len = getsize(file)
 		if not self._len:
 			raise EmptyFileError()
+
+		self._headers = dict()
+
+		for key, value in kwargs.items():
+			if value:
+				self._headers.__setitem__(key, str(value))
+				break
 
 		self._content_type, encoding = guess_type(file)
 
@@ -127,7 +135,8 @@ class MakeRequest:
 	@property
 	def headers(self) -> Dict[str, str]:
 		return {
-			"Content-Type": self._content_type
+			"Content-Type": self._content_type,
+			**self._headers
 		}
 
 	@property

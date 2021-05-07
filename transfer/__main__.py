@@ -29,7 +29,6 @@ class Upload(MakeRequest):
 				self.prepare()
 			except:
 				raise PrepareError()
-
 		response = self._send(**self.kwargs)
 
 		if response.status_code == 400:

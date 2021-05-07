@@ -1,5 +1,5 @@
 # Changelogs
 
-## V1.1.5
+## V2.0.0
 
-* updated workflow to release binaries
+* added `--max-downloads` and `--max-days` in upload
