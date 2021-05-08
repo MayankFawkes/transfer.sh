@@ -1,5 +1,5 @@
 # Changelogs
 
-## V2.0.0
+## V2.0.1
 
-* added `--max-downloads` and `--max-days` in upload
+* `--max-downloads` and `--max-days` in upload can be used together.
