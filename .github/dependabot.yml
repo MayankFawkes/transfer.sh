@@ -20,12 +20,6 @@ updates:
       # Check for updates to GitHub Actions every weekday
       interval: "daily"
 
-  - package-ecosystem: "pipenv"
-    directory: "/"
-    schedule:
-      # Check for updates to GitHub Actions every weekday
-      interval: "daily"
-
   # Maintain dependencies for Docker
   - package-ecosystem: "docker"
     # Files stored in repository root
