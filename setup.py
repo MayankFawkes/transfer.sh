@@ -12,7 +12,7 @@ README = (HERE / "README.md").read_text()
 setup(
     name="transfer.sh",
     version=f"{__version__}",
-    description="Transfer.sh command line program, Now file sharing from the command line.",
+    description="Transfer.sh command line program, Now file sharing from the command line is easy.",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/MayankFawkes/transfer.sh",

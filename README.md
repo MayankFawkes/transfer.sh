@@ -14,7 +14,7 @@ Transfer.sh command line program, Now file sharing from the command line.
 # Installation
 One command installation
 
-## With Python
+## Python
 run commands on terminal.
 
 ```
