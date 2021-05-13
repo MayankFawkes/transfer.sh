@@ -60,6 +60,7 @@ intersphinx_mapping = {
 #
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_extra_path = ["_html"]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -70,3 +71,21 @@ import shutil
 
 shutil.copy("../Changelogs.md","files/logs.md")
 shutil.copy("../img/transfer.png","transfer.png")
+shutil.copy("../img/transfer-mini.png","transfer-mini.png")
+
+html_logo = 'transfer-mini.png'
+html_theme_options = {
+    'logo_only': True,
+    'display_version': True,
+}
+
+# sphinx-notfound-page
+# https://github.com/readthedocs/sphinx-notfound-page
+notfound_context = {
+    'title': 'Page Not Found',
+    'body': '''
+<h1>Page Not Found</h1>
+<p>Sorry, we couldn't find that page.</p>
+<p>Try using the search box or go to the homepage.</p>
+''',
+}
