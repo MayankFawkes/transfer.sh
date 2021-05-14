@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
-  <loc>https://transfersh.readthedocs.io/en/latest/</loc>
+  <loc>https://transfer-sh.mayankfawkes.xyz/en/latest/</loc>
   <lastmod>2021-05-12T13:16:38+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://transfersh.readthedocs.io/en/latest/files/install.html</loc>
+  <loc>https://transfer-sh.mayankfawkes.xyz/en/latest/files/install.html</loc>
   <lastmod>2021-05-12T13:16:34+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://transfersh.readthedocs.io/en/latest/files/cli.html</loc>
+  <loc>https://transfer-sh.mayankfawkes.xyz/en/latest/files/cli.html</loc>
   <lastmod>2021-05-12T13:16:34+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://transfersh.readthedocs.io/en/latest/files/logs.html</loc>
+  <loc>https://transfer-sh.mayankfawkes.xyz/en/latest/files/logs.html</loc>
   <lastmod>2021-05-12T13:16:34+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://transfersh.readthedocs.io/en/latest/index.html</loc>
+  <loc>https://transfer-sh.mayankfawkes.xyz/en/latest/index.html</loc>
   <lastmod>2021-05-12T13:16:38+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
